@@ -23,6 +23,9 @@ jobs:
         run: |
           dad-jokes > dad_jokes_output.txt
 
+      -name: clone project
+        uses: actions/checkout@v4
+        
       - name: Commit and push results to a new branch
         run: |
           git config user.name "github-actions[bot]"
