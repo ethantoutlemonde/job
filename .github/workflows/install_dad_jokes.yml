@@ -19,12 +19,12 @@ jobs:
       - name: Install dad-jokes package globally
         run: npm install --global @mikemcbride/dad-jokes
 
+      - name: clone project
+        uses: actions/checkout@v4
+
       - name: Run dad-jokes and capture output
         run: |
           dad-jokes > dad_jokes_output.txt
-
-      -name: clone project
-       uses: actions/checkout@v4
 
       - name: Commit and push results to a new branch
         run: |
