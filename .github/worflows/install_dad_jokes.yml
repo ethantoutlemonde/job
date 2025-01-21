@@ -1,0 +1,27 @@
+name: Install and Run Dad Jokes
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  my-first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Check Node.js and npm versions
+        run: |
+          node -v
+          npm -v
+
+      - name: Install dad-jokes package globally
+        run: npm install --global @mikemcbride/dad-jokes
+
+      - name: Run dad-jokes
+        run: dad-jokes
