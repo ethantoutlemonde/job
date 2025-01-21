@@ -19,7 +19,7 @@ jobs:
       - name: Install dad-jokes package globally
         run: npm install --global @mikemcbride/dad-jokes
 
-        - name: Run dad-jokes and capture output
+      - name: Run dad-jokes and capture output
         run: |
           dad-jokes > dad_jokes_output.txt
 
