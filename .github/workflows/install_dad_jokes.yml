@@ -19,5 +19,18 @@ jobs:
       - name: Install dad-jokes package globally
         run: npm install --global @mikemcbride/dad-jokes
 
-      - name: Run dad-jokes
-        run: dad-jokes
+      # - name: Run dad-jokes
+      #   run: dad-jokes
+
+        - name: Run dad-jokes and capture output
+        run: |
+          dad-jokes > dad_jokes_output.txt
+
+      - name: Commit and push results to a new branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b new
+          git add dad_jokes_output.txt
+          git commit -m "Add dad jokes output"
+          git push origin new
