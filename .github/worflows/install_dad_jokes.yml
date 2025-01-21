@@ -1,12 +1,7 @@
 name: Install and Run Dad Jokes
 run-name: ${{ github.run_id }}
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
+on: ['push']:
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
